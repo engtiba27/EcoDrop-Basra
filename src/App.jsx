@@ -32,7 +32,8 @@
 // export default App;
 
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -42,22 +43,27 @@ import MarketPage from './Pages/Market/MarketPage';
 import CalculatorPage from './Pages/Calculator/EcoCalculator';
 
 function App() {
-  return (
-    <Router>
-      <div className="min-h-screen flex flex-col justify-between bg-white text-denim font-sans">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/map" element={<MapPage />} />
-            <Route path="/market" element={<MarketPage />} />
-            <Route path="/calculator" element={<CalculatorPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
+return (
+<Router basename="/EcoDrop-Basra">
+<div className="min-h-screen flex flex-col justify-between bg-white text-denim font-sans">
+
+    <Navbar />
+
+    <main className="flex-grow">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/map" element={<MapPage />} />
+        <Route path="/market" element={<MarketPage />} />
+        <Route path="/calculator" element={<CalculatorPage />} />
+      </Routes>
+    </main>
+
+    <Footer />
+
+  </div>
+</Router>
+
+);
 }
 
 export default App;
